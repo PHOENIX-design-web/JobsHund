@@ -1,0 +1,96 @@
+﻿@model IEnumerable<jobhundClassLibrary1.PostJob>
+@{ 
+    ViewBag.Title = "CompanyJobList";
+}
+<h2>All Job Post</h2>
+<p>
+     @Html.ActionLink("Add Job Post", "PostJob", "Job", null, new { @class = "genric-btn info", @style = "float:left;" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+       
+        <th>
+            Min-Max Salary
+        </th>
+        
+        <th>
+            Vecancey
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            PostDate
+        </th>
+        <th>
+            LastDate
+        </th>
+        
+        <th>
+            Redirect Url
+        </th>
+       
+        <th>
+            JobCategory
+        </th>
+        <th>
+            JobNature
+        </th>
+        <th>
+            JobStatus
+        </th>
+       
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+       
+        <td>
+            @item.MinSalary-@item.Maxsalary PKR
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Vecancey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationLastdate)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.WebUrl)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.JobCategory.JobCategory1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobNature.JobNature1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobStatu.JobStatus)
+        </td>
+       
+        <td>
+            @Html.ActionLink("View", "JobDetail", new { id = item.PostJobId }, new { @class = "genric-btn danger circle" })
+
+            @Html.ActionLink("+Details", "AddRequirments", new { id = item.PostJobId }, new { @class = "genric-btn info circle" })
+            @Html.ActionLink("Delete", "DeleteJobPost", new { id = item.PostJobId }, new { @class = "genric-btn danger circle" })
+
+        </td>
+    </tr>
+}
+
+</table>

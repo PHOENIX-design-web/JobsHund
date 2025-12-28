@@ -1,0 +1,52 @@
+﻿@model IEnumerable<jobhundClassLibrary1.User>
+
+@{
+    ViewBag.Title = "All Users";
+}
+
+
+
+
+<div class="section-top-border" style="width:50cm">
+    <h3 class="m-30">
+        All Users
+    </h3>
+    <div class="progress-table-wrap" style="width:40cm">
+        <div class="progress-table">
+            <div class="table-head">
+                <div class="serial">#</div>
+                <div class="visit">User Type</div>
+
+                <div class="country">UserName</div>
+                <div class="country">Password</div>
+                <div class="country">Email</div>
+                <div class="country">Phone</div>
+
+
+            </div>
+            @foreach (var item in Model)
+            {
+
+                <div class="table-row">
+                    <div class="serial">01</div>
+                    <div class="country">  @Html.DisplayFor(modelItem => item.UserId) </div>
+                    <div class="country">  @Html.DisplayFor(modelItem => item.Usertype.UserType1) </div>
+                    <div class="country">  @Html.DisplayFor(modelItem => item.UserName) </div>
+                    <div class="country">  @Html.DisplayFor(modelItem => item.Password) </div>
+                    <div class="country">  @Html.DisplayFor(modelItem => item.Email) </div>
+                    <div class="country">  @Html.DisplayFor(modelItem => item.Phone) </div>
+
+
+
+
+
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+
+
+

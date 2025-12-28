@@ -1,0 +1,120 @@
+﻿@model JobsHund.Models.JobRequirments
+@{
+    ViewBag.Title = "Job Requirments";
+}
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="contact-title"> Add Post Job Requirments</h2>
+            </div>
+            @using (Html.BeginForm())
+
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.PostJobId)
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.DropDownList("JobRequirementId",
+         null,
+         "Select Requirments",
+         htmlAttributes: new
+         {
+             @class = "form-control"
+         })
+                        @Html.ValidationMessageFor(model => model.JobRequirementId,
+         "",
+         new
+         {
+             @class = "text-danger"
+         })
+                    </div>
+                </div>
+                <div>
+                    <hr />
+                </div>
+                <div class="col-sm-12">
+
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.JobRequirementDetails, new
+                   {
+                       htmlAttributes = new
+                       {
+                           @class = "form-control",
+                           @type = "text",
+                           @id = "jobdescription",
+                           @name = "jobdescription",
+                           @placeholder = "Enter Description",
+                           @onfocus = "this.placeholder = ",
+                           @onblur = "this.placeholder = 'Enter Description'"
+                       }
+                   })
+                        @Html.ValidationMessageFor(model => model.JobRequirementDetails,
+                        "",
+                          new
+                               {
+
+                            @class = "text-danger"
+                               })
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group mt-3">
+                @Html.ActionLink("Back to List", "CompanyJobList", null, new { @Class = "genric-btn danger", @Style = "float:left;" })   <input type="submit" value="Add" class="genric-btn success" style="float:right"/>
+
+            </div>
+           
+        </div>
+
+            }
+
+            <div>
+
+            </div>
+        </div>
+    </div>
+</section>
+    <h2>Job Requirments</h2>
+
+    <table class="table table-hover">
+
+
+        <tr>
+           
+            <th>
+                Requirments Title
+            </th>
+            <th>
+                Details
+            </th>
+
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model.Details)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobRequirement.JobRequirementTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobRequirementDetails)
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Delete", "DeleteRequirments", new { id = item.JobRequirementDetailId }, new { @class = "genric-btn danger circle" })
+                </td>
+            </tr>
+        }
+
+    </table>

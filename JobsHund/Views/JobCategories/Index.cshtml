@@ -1,0 +1,43 @@
+﻿@model IEnumerable<jobhundClassLibrary1.JobCategory>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+
+
+<div class="section-top-border" style="width:27cm">
+    <h3 class="mb-30">All Category @Html.ActionLink("New Category", "Create", null, new { @class = "genric-btn info", @style = "float:right;" })</h3>
+    <div class="progress-table-wrap" style="width:27cm">
+        <div class="progress-table">
+            <div class="table-head">
+                <div class="serial">#</div>
+                <div class="country">Category</div>
+                <div class="country">Description</div>
+                <div class="visit">Action</div>
+
+            </div>
+
+            @foreach (var item in Model)
+            {
+
+        <div class="table-row">
+            <div class="serial">01</div>
+            <div class="country">  @Html.DisplayFor(modelItem => item.JobCategory1) </div>
+            <div class="country">  @Html.DisplayFor(modelItem => item.Description) </div>
+
+            <div class="visit">
+                @Html.ActionLink("Edit", "Edit", new { id = item.JobCategoryId }, new { @class = "genric-btn primary" })
+
+
+
+            </div>
+
+        </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+

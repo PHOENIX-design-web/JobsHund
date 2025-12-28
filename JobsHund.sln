@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.36631.11
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobsHund", "JobsHund\JobsHund.csproj", "{FFFD5CC1-5FEA-4D46-B948-66B1686C23CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jobhundClassLibrary1", "jobhundClassLibrary1\jobhundClassLibrary1.csproj", "{9435DCF5-AB0E-4EE7-B50E-4494E2884033}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFFD5CC1-5FEA-4D46-B948-66B1686C23CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFD5CC1-5FEA-4D46-B948-66B1686C23CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFD5CC1-5FEA-4D46-B948-66B1686C23CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFD5CC1-5FEA-4D46-B948-66B1686C23CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9435DCF5-AB0E-4EE7-B50E-4494E2884033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9435DCF5-AB0E-4EE7-B50E-4494E2884033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9435DCF5-AB0E-4EE7-B50E-4494E2884033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9435DCF5-AB0E-4EE7-B50E-4494E2884033}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88D2AE97-E97A-4C09-B4F8-0F02AEFE5BDD}
+	EndGlobalSection
+EndGlobal
